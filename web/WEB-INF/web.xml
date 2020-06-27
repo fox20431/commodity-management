@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+    <display-name>keshe</display-name>
+
+    <servlet>
+        <servlet-name>DelGoodsServlet</servlet-name>
+        <servlet-class>web.servlet.DelGoodsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>web.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>web.servlet.IndexServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddGoodsServlet</servlet-name>
+        <servlet-class>web.servlet.AddGoodsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateGoodsServlet</servlet-name>
+        <servlet-class>web.servlet.UpdateGoodsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddUserServlet</servlet-name>
+        <servlet-class>web.servlet.AddUsersServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateGoodsPageServlet</servlet-name>
+        <servlet-class>web.servlet.UpdateGoodsPageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>web.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidateUsernameServlet</servlet-name>
+        <servlet-class>web.servlet.ValidateUsernameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCartsServlet</servlet-name>
+        <servlet-class>web.servlet.AddCartsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartsServlet</servlet-name>
+        <servlet-class>web.servlet.CartsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DelCartsServlet</servlet-name>
+        <servlet-class>web.servlet.DelCartsServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>DelGoodsServlet</servlet-name>
+        <url-pattern>/delGoodsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddGoodsServlet</servlet-name>
+        <url-pattern>/addGoodsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateGoodsServlet</servlet-name>
+        <url-pattern>/updateGoodsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUserServlet</servlet-name>
+        <url-pattern>/addUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateGoodsPageServlet</servlet-name>
+        <url-pattern>/updateGoods</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidateUsernameServlet</servlet-name>
+        <url-pattern>/validateUsernameServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCartsServlet</servlet-name>
+        <url-pattern>/addCartsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartsServlet</servlet-name>
+        <url-pattern>/carts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DelCartsServlet</servlet-name>
+        <url-pattern>/delCartsServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>web.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

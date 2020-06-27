@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/util.css">
+  <link rel="stylesheet" type="text/css" href="./css/form.css">
+
+  <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+
+
+  <script>
+    $(function(){
+
+      //两次密码验证
+      var pw = $("#password");
+      var rpw = $("#re-password");
+
+      rpw.blur(function(){
+        if (pw.val() != rpw.val()){
+          alert("两次密码不一致");
+        }
+      })
+
+      $("input[name='username']").blur(function () {
+        var val = $(this).val();
+        val = $.trim(val);
+
+        if(val != ""){
+          var url = "validateUsernameServlet";
+          var args = {"username":val,"time":new Date()};
+
+          $.post(url,args,function (data) {
+            alert(data);
+          })
+        }
+      });
+
+    })
+
+
+  </script>
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="wrap">
+
+    <form action="./addUserServlet" method="post" id="regForm">
+      <h2 class="p-t-30 p-b-30" id="login-title">账号注册</h2>
+
+      <input class="m-b-30" type="text" placeholder="用户名" name="username">
+
+      <br>
+
+
+      <input id="password" class="m-b-30" type="password" placeholder="密码" name="password">
+
+      <br>
+
+      <input id="re-password" class="m-b-30" type="password" placeholder="确认密码">
+
+      <br>
+
+      <input class="m-b-30" type="text" placeholder="邮箱" name="email">
+
+      <br>
+
+      <button class="btn m-b-15" type="submit">注册</button>
+
+      <br>
+
+  </div>
+</div>
+
+
+
+</body>
+
+</html>
